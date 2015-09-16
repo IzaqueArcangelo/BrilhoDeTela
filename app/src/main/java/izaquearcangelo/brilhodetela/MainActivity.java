@@ -13,6 +13,7 @@ import android.view.WindowManager;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+/** Classe principal da aplicação */
 public class MainActivity extends Activity {
 
     private SeekBar brightbar;
