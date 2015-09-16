@@ -36,14 +36,14 @@ public class MainActivity extends Activity {
         //Get the current window
         window = getWindow();
 
-        //Set the seekbar range between 0 and 255
+        //Define o intervalo do seekbar entre  0 e 255
         brightbar.setMax(255);
-        //Set the seek bar progress to 1
+        //Define o incremento da barra
         brightbar.setKeyProgressIncrement(1);
 
         try
         {
-            //Get the current system brightness
+            //Obtem o brilho do Sistema atual.
             brightness = Settings.System.getInt(cResolver, Settings.System.SCREEN_BRIGHTNESS);
         }
         catch (Settings.SettingNotFoundException e)
@@ -79,12 +79,11 @@ public class MainActivity extends Activity {
 
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser)
             {
-                //Set the minimal brightness level
-                //if seek bar is 20 or any value below
-                if(progress<=20)
+                //Define o mínimo de brilho para o seekbar
+                if(progress<=1)
                 {
                     //Set the brightness to 20
-                    brightness=20;
+                    brightness=1;
                 }
                 else //brightness is greater than 20
                 {
